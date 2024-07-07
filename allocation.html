@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Adding styles to classes by using CSS -->
+    <style>
+        /* Apply background color to all elements */
+        * {
+            background-color: black;
+        }
+         /* Styling the outer container */
+        .outer {
+            position: relative;
+            left: 27vw;
+            top: 18vh;
+            padding-left: 5vw;
+            padding-bottom: 3vw;
+            padding-right: 5vw;
+            padding-top: 3vw;
+            margin: 5vh;
+            border: 2px solid black;
+            width: 30vw;
+            color: white;
+            background-color: grey;
+            border-radius: 20px;
+        }
+        /* Background color for elements with class "bg" */
+        .bg {
+            background-color: rgb(46, 45, 45);
+        }
+        /* Styling the download button */
+        .down_btn {
+            position: relative;
+            left: 10vw;
+            height: 50px;
+            width: 140px;
+            border-radius: 20px;
+            background-color: rgb(0, 162, 255);
+            border: solid black;
+            color: white;
+        }
+        /* Hover effect for the download button */
+        .down_btn:hover {
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Outer container for the content -->
+    <div class="outer bg">
+        <!-- Header of the page -->
+        <h1 class="bg" style="position: relative;left: 2.5vw;">Final Allocation of Rooms</h1>
+        <br>
+        <!-- Container for the tables -->
+        <div class="table bg">
+            <!-- Loop through the tables and display them  -->
+            {% for table in tables %}
+            {{ table|safe }}
+            {% endfor %}
+        </div>
+        <br>
+        <br>
+        <!-- Link to download the CSV file -->
+        <a class="bg" href="/download_allocation">
+            <!-- Button for downloading the CSV file -->
+            <button class="down_btn">Download CSV</button>
+        </a>
+    </div>
+</body>
+
+</html>
